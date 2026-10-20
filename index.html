@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pilgrimage Travel Survey</title>
 
-  <link id="surveyStyles" rel="stylesheet" href="style.css?v=20261020-download-trip-1">
-  <script src="tablet-layout.js?v=20261020-tablet-layout-3"></script>
+  <link rel="stylesheet" href="style.css?v=20261020-table-width-1">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
   <script>
@@ -49,14 +48,9 @@
   </div>
 
   <h1>Pilgrimage Travel Survey</h1>
-  <div id="tabletLayoutControl" class="tablet-layout-control" hidden>
-    <button type="button" id="tabletLayoutToggle" aria-label="Switch to tablet view" title="Switch to tablet view" aria-pressed="false">
-      <svg class="layout-icon-tablet" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M3 9h18"/></svg>
-      <svg class="layout-icon-phone" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" hidden><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg>
-    </button>
-  </div>
 
   <div id="progress-indicator">
+      <span class="step"></span>
       <span class="step"></span>
       <span class="step"></span>
       <span class="step"></span>
@@ -69,7 +63,7 @@
   </div>
 
   <form id="surveyForm">
-  <input type="hidden" name="surveySchemaVersion" value="2026-10-20.2">
+  <input type="hidden" name="surveySchemaVersion" value="2026-10-20.1">
   <input type="hidden" name="choiceDesignVersion" value="sha256:a465529be8ce34ed">
   <input type="hidden" name="choiceBlock" id="choiceBlock">
   <input type="hidden" name="surveyStartTimestamp" id="surveyStartTimestamp">
@@ -102,32 +96,6 @@
                 <div><span class="consent-icon">&#127963;&#65039;</span><p>Help plan <b>safer, cheaper and more comfortable</b> yatras in future</p></div>
             </div>
 
-
-
-            <h3 class="consent-subhead">What's inside</h3>
-            <ol class="consent-steps">
-                <li><span class="consent-icon">&#128100;</span><b>About you</b><small>age, group, home state</small></li>
-                <li><span class="consent-icon">&#129517;</span><b>Your journey</b><small>route, modes, time, cost, stay</small></li>
-                <li><span class="consent-icon">&#9878;&#65039;</span><b>Pick your option</b><small>choose between travel options</small></li>
-                <li><span class="consent-icon">&#128172;</span><b>Your views</b><small>priorities and suggestions</small></li>
-            </ol>
-
-            <div class="consent-facts">
-                <span>&#9201;&#65039; <b>5&ndash;8 min</b></span>
-                <span>&#128587; Voluntary</span>
-                <span>&#128274; <strong>Academic research only</strong></span>
-            </div>
-
-            <p>By clicking "I Accept and Agree" you consent to take part.</p>
-            <div class="consent-contact">
-                <h3>Queries or Feedback</h3>
-                <p><b>Anuj Nautiyal</b><br>
-                PhD Scholar, Indian Institute of Technology Roorkee, Uttarakhand<br>
-                Contact: +918192832623<br>
-                Email: anuj_n@ce.iitr.ac.in</p>
-            </div>
-        </div>
-        <section class="survey-instructions" aria-label="Survey instructions">
             <details class="survey-help">
                 <summary>How to fill this survey</summary>
                 <p>Tap an answer to select it. For questions that say &ldquo;select all that apply&rdquo;, you can choose more than one answer.</p>
@@ -153,13 +121,35 @@
                 <p class="field-helper">There are 9 question pages after the introduction. Pages or questions that do not apply may be empty; use Next to continue.</p>
                 <p class="field-helper">If an answer is missing, it is marked red. Complete it correctly and it turns green. On a small screen, swipe sideways inside wide rating tables to see all options.</p>
             </details>
-        </section>
 
+            <h3 class="consent-subhead">What's inside</h3>
+            <ol class="consent-steps">
+                <li><span class="consent-icon">&#128100;</span><b>About you</b><small>age, group, home state</small></li>
+                <li><span class="consent-icon">&#129517;</span><b>Your journey</b><small>route, modes, time, cost, stay</small></li>
+                <li><span class="consent-icon">&#9878;&#65039;</span><b>Pick your option</b><small>choose between travel options</small></li>
+                <li><span class="consent-icon">&#128172;</span><b>Your views</b><small>priorities and suggestions</small></li>
+            </ol>
+
+            <div class="consent-facts">
+                <span>&#9201;&#65039; <b>5&ndash;8 min</b></span>
+                <span>&#128587; Voluntary</span>
+                <span>&#128274; <strong>Academic research only</strong></span>
+            </div>
+
+            <p>By clicking "I Accept and Agree" you consent to take part.</p>
+            <div class="consent-contact">
+                <h3>Queries or Feedback</h3>
+                <p><b>Anuj Nautiyal</b><br>
+                PhD Scholar, Indian Institute of Technology Roorkee, Uttarakhand<br>
+                Contact: +918192832623<br>
+                Email: anuj_n@ce.iitr.ac.in</p>
+            </div>
+        </div>
         <button type="button" id="consent-btn" onclick="nextPrev(1)">I Accept and Agree</button>
     </div>
 
   <div class="form-page" id="page-1-E">
-        <p class="fatigue-progress" style="text-align:right;">Page 8 of 9 · ~2 min</p>
+        <p class="fatigue-progress" style="text-align:right;">Page 9 of 10 · ~2 min</p>
         <h2>Section E: Respondent Profile & Demographics</h2>
         <p class="privacy-note">These details are collected near the end to help analyze travel patterns across different pilgrim groups. Your responses will be used only for academic research and planning purposes, and will not be shared publicly.</p>
         <h3>E1: Basic Demographic Characteristics</h3>
@@ -297,7 +287,7 @@
     </div>
 
   <div class="form-page" id="page-2-B">
-        <p class="fatigue-progress" style="text-align:right;">Page 1 of 9 · ~3 min</p>
+        <p class="fatigue-progress" style="text-align:right;">Page 2 of 10 · ~3 min</p>
         <h2>Section A: Current Travel Behaviour</h2>
 
         <h3>A1: Travel Group Characteristics</h3>
@@ -400,7 +390,7 @@
         </fieldset>
 
         <h3>A2: Visit History &amp; Frequency</h3>
-        <p>For each shrine, mark how many times you visited before and whether it is included in this trip. Click a selected previous-visit number again to clear it.</p>
+        <p>For each shrine, mark how many times you visited before and whether it is included in this trip.</p>
         <div class="survey-table-scroll" role="region" aria-label="Shrine visit history" tabindex="0">
 <table class="grid-table" id="visitHistoryTable">
           <colgroup><col class="visit-shrine-column"><col span="4"><col class="visit-current-column"></colgroup>
@@ -549,7 +539,7 @@
     </div>
 
   <div class="form-page" id="page-2B-journey">
-    <p class="fatigue-progress" style="text-align:right;">Page 2 of 9 · ~4 min</p>
+    <p class="fatigue-progress" style="text-align:right;">Page 3 of 10 · ~4 min</p>
         <h2>Section A (continued): Your Journey Details</h2>
 
         <h3>A4: Transportation Mode Choice</h3>
@@ -561,6 +551,11 @@
             <label class="answer-choice"><input type="radio" name="onwardVehicleContinuity" value="Changed vehicle or mode" required><span>No, changed vehicle or mode</span></label>
           </div>
         </fieldset>
+
+        <section class="journey-visual" id="mainHaulJourneyPreview" aria-live="polite">
+          <div class="journey-visual-title">Your onward journey</div>
+          <p class="journey-visual-empty">Select your starting point, shrine order, and travel mode to build the route.</p>
+        </section>
 
         <div id="mainHaulJourneyDetails" style="display:none;">
         <p id="mainHaulTransferHint" class="field-helper"></p>
@@ -608,7 +603,7 @@
 
         <div id="interDhamSection" style="display:none;">
           <h4>A4.1a Travel between shrines</h4>
-          <p>For each journey after your first shrine, enter travel details from the previous base to the next. Enter the vehicle type, travel time, and fare details for each route.</p>
+          <p>For each journey after your first shrine, enter travel details from the previous base to the next. Use the copy button when the mode and fare type are unchanged, then enter only the time and fare for that route.</p>
           <p class="field-helper">Enter the one-way amount paid and state what that amount covers. Enter ₹0 if transport was included in a package. For an ongoing or planned trip, enter your best estimate.</p>
           <table id="interDhamTable" class="journey-card-table">
             <thead>
@@ -722,7 +717,6 @@
             <legend>Stopover arrangements for your upcoming routes</legend>
             <p class="field-helper">If already booked, enter only the details you know in the table below.</p>
         </fieldset>
-        <div class="survey-table-scroll entry-table-scroll" role="region" aria-label="Rest stops" tabindex="0">
         <table id="restLocationTable">
             <thead>
                 <tr>
@@ -738,14 +732,8 @@
             <tbody>
                 </tbody>
         </table>
-        </div>
         <p id="plannedStopoverTableNote" class="field-helper" hidden><small>* Planned next: choose a prebooked arrangement to enter known details; otherwise stopover questions are skipped.</small></p>
         <button type="button" id="addRestLocationRow">Add Additional Rest Stop</button>
-
-        <section class="journey-visual" id="mainHaulJourneyPreview" aria-live="polite">
-          <div class="journey-visual-title">Your onward journey</div>
-          <p class="journey-visual-empty">Select your starting point, shrine order, and travel mode to build the route.</p>
-        </section>
 
         <div class="nav-buttons">
           <div style="float:left;">
@@ -758,8 +746,14 @@
     </div>
 
   <div class="form-page" id="page-2C-lastmile">
-    <p class="fatigue-progress" style="text-align:right;">Page 3 of 9 · ~3 min</p>
+    <p class="fatigue-progress" style="text-align:right;">Page 4 of 10 · ~3 min</p>
     <h2>Section A (continued): Travel to the shrine and your stay</h2>
+
+        <section class="journey-visual" id="lastMileJourneyPreview" aria-live="polite">
+          <div class="journey-visual-title">Your shrine approach</div>
+          <p class="journey-visual-empty">Select a last-mile mode to build the route.</p>
+        </section>
+
 
         <h4>A4.2 Last-Mile Travel (Base Camp / Road-head → Shrine)</h4>
         <p>Tell us how you travelled from the nearby town or end of the road to each shrine. For Kedarnath, first choose whether you travelled through Sonprayag/Gaurikund or flew from a helipad. For <span translate="no">Hemkund Sahib</span>, give details for each part of the journey: Govindghat → Pulna, Pulna → Ghangaria, and Ghangaria → <span translate="no">Hemkund Sahib</span>. If your trip is <em>ongoing or planned</em>, enter your intended mode.</p>
@@ -797,8 +791,8 @@
               </label>
             </div>
             <div id="kedarnathApproachCostLabel" style="display:none;">
-              <span class="approach-cost-title">Cost per person, one-way (₹)</span>
-              <div class="approach-fixed-cost">₹50</div>
+              <span style="font-weight:600;">Cost per person, one-way (₹)</span>
+              <div style="margin-top:4px; padding:6px 10px; background:#f0f4f2; border:1px solid #cbd8d0; border-radius:6px; font-size:1rem; font-weight:700;">₹50</div>
               <input type="hidden" name="lastMileApproachCost_Kedarnath" value="50">
             </div>
             <label id="kedarnathApproachWaitingLabel">Waiting time
@@ -930,7 +924,9 @@
         </div>
         <div id="hemkundLeg3Slot"></div>
         </fieldset>
-        <div class="survey-table-scroll entry-table-scroll" role="region" aria-label="Last-mile journeys" tabindex="0">
+        <div class="field-helper" id="lastMileCostNote" style="background:#e7f0f4;border-left:3px solid #527b91;padding:8px 12px;margin-bottom:8px;">
+          <strong>Cost note:</strong> Enter <u>one-way cost per person (₹)</u>. Trek/walk = ₹0.
+        </div>
         <table id="lastMileTable">
             <thead>
                 <tr>
@@ -939,12 +935,12 @@
                     <th>Mode Used / Intended</th>
                     <th>One-Way Time (hrs)</th>
                     <th>Cost per Person, One-Way (₹)</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 </tbody>
         </table>
-        </div>
 
         <h4>A4.2a Return Last-Mile Journey (Shrine → Base/Road-head)</h4>
         <p class="field-helper">For each selected shrine, indicate whether your return from the shrine used the same mode and cost. Enter separate details only when it was different.</p>
@@ -956,28 +952,22 @@
             <legend>Stay arrangements for shrines you have not visited yet</legend>
             <p class="field-helper">Actual stay duration is skipped. If your stay is already booked, you can enter the accommodation and cost you know.</p>
         </fieldset>
-        <div class="survey-table-scroll entry-table-scroll" role="region" aria-label="Accommodation and stay duration" tabindex="0">
         <table id="stayDurationTable">
-            <colgroup><col class="stay-shrine-column"><col span="5" class="stay-time-column"><col class="stay-type-column"><col class="stay-cost-column"></colgroup>
             <thead>
                 <tr>
-                    <th rowspan="2">Shrine / Stay location</th>
-                    <th colspan="5">Shrine stay duration</th>
-                    <th rowspan="2">Accommodation Type</th>
-                    <th rowspan="2">Total Accommodation Cost (₹)</th>
-                </tr>
-                <tr>
-                    <th>&lt;8 hrs</th>
+                    <th>Shrine / Stay location</th>
+                    <th>&lt;8 hrs (day visit)</th>
                     <th>8–12 hrs</th>
                     <th>12–18 hrs</th>
                     <th>18–24 hrs</th>
                     <th>&gt;24 hrs</th>
+                    <th>Accommodation Type</th>
+                    <th>Total Accommodation Cost (₹)</th>
                 </tr>
             </thead>
             <tbody>
                 </tbody>
         </table>
-        </div>
 
         <p class="field-helper" style="margin-top:12px;">Would you go on this pilgrimage again in the coming years?</p>
         <div style="display:flex;gap:20px;flex-wrap:wrap;margin:4px 0 12px 0;">
@@ -985,18 +975,6 @@
           <label><input type="radio" name="intentToReturn" value="No"> No</label>
           <label><input type="radio" name="intentToReturn" value="Unsure"> Unsure</label>
         </div>
-
-        <section class="journey-visual" id="lastMileJourneyPreview" aria-live="polite">
-          <div class="journey-visual-title">Your shrine approach</div>
-          <p class="journey-visual-empty">Select a last-mile mode to build the route.</p>
-        </section>
-
-        <details class="whole-trip-summary">
-          <summary>See whole trip</summary>
-          <section class="journey-visual" id="wholeTripJourneyPreview" aria-live="polite">
-            <p class="journey-visual-empty">Enter your travel details to see your whole trip.</p>
-          </section>
-        </details>
 
         <div class="nav-buttons">
           <div style="float:left;">
@@ -1009,7 +987,7 @@
     </div>
 
   <div class="form-page" id="page-3-C">
-    <p class="fatigue-progress" style="text-align:right;">Page 4 of 9 · ~5 min</p>
+    <p class="fatigue-progress" style="text-align:right;">Page 5 of 10 · ~5 min</p>
     <h2 id="mainHaulChoiceTitle">Section B: Main-Haul Choice Experiment</h2>
     <div class="project-brief" id="mainHaulProjectBrief">
         <fieldset class="answer-question">
@@ -1146,7 +1124,7 @@
   </div>
 
   <div class="form-page" id="page-4-C-last-mile">
-    <p class="fatigue-progress" style="text-align:right;">Page 5 of 9 · ~4 min</p>
+    <p class="fatigue-progress" style="text-align:right;">Page 6 of 10 · ~4 min</p>
     <h2 id="lastMileChoiceTitle">Section C: Last-Mile Choice Experiment</h2>
     <div class="project-brief" id="lastMileProjectBrief">
         <fieldset class="answer-question">
@@ -1244,7 +1222,7 @@
         </div>
 
         <div class="dham-block" id="last-mile-Gangotri-block" style="border-left: 5px solid #4a5a7a; background:#f0f2f7; display: none;">
-            <h4 class="text-xl font-semibold mb-3">📍 Gangotri: Uttarkashi/Harshil → Temple (Near Road-head)</h4>
+            <h4 class="text-xl font-semibold mb-3">📍 Gangotri: Uttarkashi/Harsil → Temple (Near Road-head)</h4>
             <div id="last-mile-Gangotri-tasks"></div>
         </div>
 
@@ -1329,7 +1307,7 @@
   </div>
 
   <div class="form-page" id="page-5-acceptance">
-    <p class="fatigue-progress" style="text-align:right;">Page 6 of 9 ? ~2 min</p>
+    <p class="fatigue-progress" style="text-align:right;">Page 7 of 10 ? ~2 min</p>
     <h2>Railway &amp; Aerial Ropeway Acceptance</h2>
     <!-- Gate question for rail block -->
     <div class="gate-question gate-question--rail">
@@ -1535,7 +1513,7 @@
   </div>
 
   <div class="form-page" id="page-5-D">
-    <p class="fatigue-progress" style="text-align:right;">Page 7 of 9 · ~3 min</p>
+    <p class="fatigue-progress" style="text-align:right;">Page 8 of 10 · ~3 min</p>
     <h2>Section D: Travel Priorities &amp; Preferences</h2>
 
     <!-- D0: Transport priorities -->
@@ -1622,7 +1600,7 @@
   </div>
 
   <div class="form-page" id="page-6-F">
-    <p class="fatigue-progress" style="text-align:right;">Page 9 of 9 · ~1 min</p>
+    <p class="fatigue-progress" style="text-align:right;">Page 10 of 10 · ~1 min</p>
     <h2>Section F: Feedback & Suggestions</h2>
 
     <label>Overall trip rating:
@@ -1685,14 +1663,6 @@
       <textarea name="feedbackOther" rows="3"></textarea>
     </label>
 
-    <section class="lucky-draw-option" aria-labelledby="luckyDrawTitle">
-      <h3 id="luckyDrawTitle">Lucky draw (optional)</h3>
-      <p id="luckyDrawHelp">To opt in to the lucky draw, enter your GPay mobile number or UPI ID below. Leave this blank if you do not wish to enter; you can still submit the survey.</p>
-      <label for="luckyDrawUpi">GPay mobile number or UPI ID (optional)</label>
-      <input type="text" name="luckyDrawUpi" id="luckyDrawUpi" maxlength="100" placeholder="e.g., 9876543210 or yourname@okaxis" aria-describedby="luckyDrawHelp luckyDrawPrivacy" autocomplete="off" autocapitalize="none" spellcheck="false">
-      <p class="field-helper" id="luckyDrawPrivacy">By providing this detail, you agree to its use for administering the lucky draw. Never enter a UPI PIN, OTP or bank account details. Entry does not guarantee a prize.</p>
-    </section>
-
     <div class="nav-buttons">
       <div style="float:left;">
         <button type="button" onclick="nextPrev(-1)">Previous</button>
@@ -1743,7 +1713,7 @@
   <button id="exportCSV">Export CSV</button>
   <button id="exportXLSX">Export Excel</button>
 
-  <script src="script.js?v=20261020-download-trip-1"></script>
+  <script src="script.js?v=20261020-table-width-1"></script>
 
 </body>
 </html>
